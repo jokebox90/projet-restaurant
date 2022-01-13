@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "App Dev",
+            "name": "Développement",
             "type": "pwa-node",
             "request": "launch",
             "runtimeExecutable": "yarn",
@@ -17,7 +17,7 @@
             ]
         },
         {
-            "name": "App Prod",
+            "name": "Production",
             "type": "pwa-node",
             "request": "launch",
             "runtimeExecutable": "yarn",
