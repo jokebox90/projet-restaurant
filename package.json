@@ -1,17 +1,28 @@
 {
-  "name": " ",
-  "version": "0.0.1",
-  "description": "",
-  "keywords": "",
-  "license": "",
-  "author": "",
+  "name": "projet-restaurant",
+  "version": "1.0.0",
+  "description": "Site web modèle pour des restaurants",
+  "main": "server.js",
+  "repository": "https://github.com/jokebox90/projet-restaurant.git",
+  "author": "Jonathan Vagnier <adm.jvagnier@gmail.com>",
+  "license": "MIT",
+  "private": false,
   "scripts": {
-    "build": "parcel build index.html",
-    "dev": "parcel index.html --open",
-    "start": "npm run build && npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "gulp": "gulp",
+    "scss": "sass --watch scss/main.scss assets/css/main.css",
+    "dev": "nodemon --watch package.json --watch yarn.lock --watch scss --watch views --ext html,js,css,scss,sass,json"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "nunjucks": "^3.2.3"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "browser-sync": "^2.27.7",
+    "gulp": "^4.0.2",
+    "gulp-nodemon": "^2.5.0",
+    "gulp-sass": "^5.1.0",
+    "nodemon": "^2.0.15",
+    "sass": "^1.48.0"
   }
 }
