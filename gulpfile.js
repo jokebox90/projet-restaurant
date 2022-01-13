@@ -37,7 +37,7 @@ function sassTask(done) {
 exports.sassTask = sassTask
 
 function sassWatch() {
-  gulp.watch('scss/**/*.scss', gulp.series(sassTask, browserSync.reload))
+  // gulp.watch('scss/**/*.scss', gulp.series(sassTask, browserSync.reload))
   gulp.watch(['scss/**/*.scss']).on("change", gulp.series(sassTask, browserSync.reload))
 }
 
