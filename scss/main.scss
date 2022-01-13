@@ -1,5 +1,12 @@
-/* CSS principal */
+/* Main */
+
+@import 'vendor/normalize';
+@import 'vendor/html5boilerplate';
+@import 'mixins/layouts';
+@import 'partials/fonts';
+@import 'variables/colors';
 
 body {
-    background-color: #fefefe;
+    color: $lightColor;
+    background-color: rgb($darkColor);
 }
