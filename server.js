@@ -12,7 +12,23 @@ nunjucks.configure('html', {
 app.set('view engine', 'html')
 
 app.get('/', (req, res) => {
-  res.render('index.html')
+  res.render('accueil.html')
+})
+
+app.get('/boissons', (req, res) => {
+  res.render('boissons.html')
+})
+
+app.get('/plats', (req, res) => {
+  res.render('plats.html')
+})
+
+app.get('/contact', (req, res) => {
+  res.render('contact.html')
+})
+
+app.get('/reservation', (req, res) => {
+  res.render('reservation.html')
 })
 
 app.use(express.static('assets'))

@@ -9,9 +9,7 @@
   "private": false,
   "scripts": {
     "start": "node server.js",
-    "gulp": "gulp",
-    "scss": "sass --watch scss/main.scss assets/css/main.css",
-    "dev": "nodemon --watch package.json --watch yarn.lock --watch scss --watch views --ext html,js,css,scss,sass,json"
+    "dev": "gulp"
   },
   "dependencies": {
     "express": "^4.17.2",

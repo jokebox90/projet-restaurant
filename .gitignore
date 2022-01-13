@@ -4,4 +4,4 @@
 node_modules
 dist
 .cache
-css/*.css
+assets/css/*.css
