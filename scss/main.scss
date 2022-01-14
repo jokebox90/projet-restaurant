@@ -7,6 +7,6 @@
 @import 'variables/colors';
 
 body {
-    color: $lightColor;
-    background-color: rgba($darkColor, 1.0);
+    color: $dark;
+    background-color: rgba($light, 1.0);
 }
