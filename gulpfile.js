@@ -9,11 +9,8 @@ function serverTask(done) {
     ext: 'js html css', //nodemon watches *.js, *.html and *.css files
     env: { 'NODE_ENV': 'development' }
   })
-
   done()
 }
-
-exports.serverTask = serverTask
 
 function browserSyncTask(done) {
   browserSync.init({
@@ -24,8 +21,6 @@ function browserSyncTask(done) {
   })
 }
 
-exports.browserSyncTask = browserSyncTask
-
 function sassTask(done) {
   gulp.src('scss/**/*.scss')
         .pipe(sass().on('error', sass.logError))
@@ -34,13 +29,22 @@ function sassTask(done) {
   done()
 }
 
-exports.sassTask = sassTask
-
 function sassWatch() {
-  // gulp.watch('scss/**/*.scss', gulp.series(sassTask, browserSync.reload))
-  gulp.watch(['scss/**/*.scss']).on("change", gulp.series(sassTask, browserSync.reload))
+  gulp.watch([
+    'scss/**/*.scss',
+  ]).on("change", gulp.series(sassTask, browserSync.reload))
 }
 
+function htmlWatch() {
+  gulp.watch([
+    'assets/**/*.css',
+    'html/**/*.html'
+  ]).on("change", gulp.series(browserSync.reload))
+}
+
+exports.serverTask = serverTask
+exports.browserSyncTask = browserSyncTask
+exports.sassTask = sassTask
 exports.sassWatch = sassWatch
 
-exports.default = gulp.parallel(sassWatch, serverTask, browserSyncTask)
+exports.default = gulp.parallel(sassTask, sassWatch, serverTask, browserSyncTask)
