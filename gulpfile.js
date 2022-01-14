@@ -42,9 +42,10 @@ function htmlWatch() {
   ]).on("change", gulp.series(browserSync.reload))
 }
 
+exports.htmlWatch = htmlWatch
 exports.serverTask = serverTask
 exports.browserSyncTask = browserSyncTask
 exports.sassTask = sassTask
 exports.sassWatch = sassWatch
 
-exports.default = gulp.parallel(sassTask, sassWatch, serverTask, browserSyncTask)
+exports.default = gulp.parallel(htmlWatch, sassTask, sassWatch, serverTask, browserSyncTask)
